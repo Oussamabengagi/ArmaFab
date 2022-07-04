@@ -92,12 +92,54 @@ class _SignInScreenState extends State<SignInScreen> {
             backgroundColor: Colors.red,
             fontSize: 15,
             gravity: ToastGravity.TOP);
-      } else {
+      } else if (_email.length == 0 && _password.length == 0) {
         Fluttertoast.showToast(
-            msg: "Loggin in ...",
-            backgroundColor: Colors.green,
+            msg: "Email and Password cannot be empty !",
+            backgroundColor: Colors.red,
             fontSize: 15,
             gravity: ToastGravity.TOP);
+      } else if (_email.length == 0) {
+        Fluttertoast.showToast(
+            msg: "Email adress cannot be empty !",
+            backgroundColor: Colors.red,
+            fontSize: 15,
+            gravity: ToastGravity.TOP);
+      } else if (_password.length == 0) {
+        Fluttertoast.showToast(
+            msg: "Password cannot be empty !",
+            backgroundColor: Colors.red,
+            fontSize: 15,
+            gravity: ToastGravity.TOP);
+      } else if (error.message.toString().toUpperCase() ==
+          "THERE IS NO USER RECORD CORRESPONDING TO THIS IDENTIFIER. THE USER MAY HAVE BEEN DELETED.") {
+        Fluttertoast.showToast(
+            msg: "There is no user with this email/password !",
+            backgroundColor: Colors.red,
+            fontSize: 15,
+            gravity: ToastGravity.TOP);
+      } else if (_password.length < 6) {
+        Fluttertoast.showToast(
+            msg: "Password is too short !",
+            backgroundColor: Colors.red,
+            fontSize: 15,
+            gravity: ToastGravity.TOP);
+      } else if (error.message.toString().toUpperCase() ==
+          "THE PASSWORD IS INVALID OR THE USER DOES NOT HAVE A PASSWORD.") {
+        Fluttertoast.showToast(
+            msg: "The password is invalid for this user !",
+            backgroundColor: Colors.red,
+            fontSize: 15,
+            gravity: ToastGravity.TOP);
+      } else if (error.message.toString().toUpperCase() ==
+          "WE HAVE BLOCKED ALL REQUESTS FROM THIS DEVICE DUE TO UNUSUAL ACTIVITY. TRY AGAIN LATER.") {
+        Fluttertoast.showToast(
+            msg: "Too many logging in attempts , Try again later",
+            textColor: Colors.black,
+            backgroundColor: Colors.yellowAccent,
+            fontSize: 15,
+            gravity: ToastGravity.TOP);
+      } else {
+        print(error.message.toString());
       }
     }
   }

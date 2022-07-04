@@ -1,6 +1,5 @@
 import 'package:arma/reusable_widgets/reusable_widget.dart';
 import 'package:arma/screens/home_screen.dart';
-import 'package:arma/screens/signin_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -17,7 +16,6 @@ class SignUpScreen extends StatefulWidget {
 class _SignUpScreenState extends State<SignUpScreen> {
   TextEditingController _passwordTextController = TextEditingController();
   TextEditingController _emailTextController = TextEditingController();
-  TextEditingController _userNameTextController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +64,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       email: _emailTextController.text,
                       password: _passwordTextController.text)
                   .then((value) {
-                Navigator.push(context,
+                Fluttertoast.showToast(
+                    msg: "Signed up Successfully !",
+                    backgroundColor: Colors.green,
+                    fontSize: 15,
+                    gravity: ToastGravity.TOP);
+                Navigator.pushReplacement(context,
                     MaterialPageRoute(builder: (context) => HomeScreen()));
               });
             })
