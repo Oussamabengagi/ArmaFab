@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "355334182396",
+    "project_id": "arma-9d0af",
+    "storage_bucket": "arma-9d0af.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:355334182396:android:24c4dd08475e506f1ece79",
+        "android_client_info": {
+          "package_name": "com.fab.arma"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "355334182396-06roc1b9lsksk4p4iqsvglkm8rqf7gd2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDM4dMA6bH3yOiE2dFApq_PaiOJR5TAPG0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "355334182396-06roc1b9lsksk4p4iqsvglkm8rqf7gd2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
